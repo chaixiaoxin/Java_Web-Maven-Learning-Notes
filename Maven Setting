@@ -1,1 +1,26 @@
-1.1 Maven download :http://maven.apache.org/download.cgi
+#安装和配置maven
+
+1.1 在apache上http://www.maven.apache.org/或maven:http://maven.apache.org/download.cgi 下载并解压安装
+1.2 配置config目录中的 settings.xml
+    设置mirror liyun镜像
+    <mirrors>
+        <mirror>
+            <id>aliyun</id>
+            <name>aliyun Maven</name>
+            <mirrorOf>*</mirrorOf>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+        </mirror>
+    </mirrors>
+    设置Profiles 设定制定JDK环境参数
+     <profile>
+      <id>jdk18</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+        <jdk>1.8</jdk>
+      </activation>
+      <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
+      </properties>	
+    </profile>
